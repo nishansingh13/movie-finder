@@ -4,7 +4,6 @@ import axios from "axios";
 import { useState } from "react";
 import fallbackImage from "@/public/imagenotfound.jpg";
 import { Loader2 } from "lucide-react";
-import Pizza from ".";
 interface Movie {
   title: string;
   id: number;
@@ -65,14 +64,13 @@ export default function Home({link}:{link:string}) {
   };
   
   return (
-    <div style={
-        {backgroundImage:`url(${link})`, backgroundRepeat:'no-repeat', width:'full'}
-        }>
+    // style={ {backgroundImage:`url(${link})`, backgroundRepeat:'no-repeat', width:'full'}}
+    <div>
    
     {loading?<Loader2 className="animate-spin"/>:(
  <div className="p-2 gap-2 flex " 
 >
-  <Pizza/>
+
     <input className="bg-gray-300 px-1" type="text" placeholder="Search Movie here" value={inputValue} onKeyDown={(e)=>{e.key=="Enter" && handleSearch((e.target as HTMLInputElement).value)}}  onChange={(e) => setInputValue(e.target.value)} />
     <button className="rounded-sm bg-black text-white px-2 py-1" onClick={(e)=>{handleSearch(inputValue);console.log(e)}}>Search</button>
     </div>)}
@@ -82,6 +80,7 @@ export default function Home({link}:{link:string}) {
             <h3>{movie.title}</h3>
             <p>Release Date: {movie.release_date}</p>
             <Image
+            className="cursor-pointer hover:scale-[115%] transition-all"
               onClick={() => handleRegion(movie.id)} 
               src={
                 movie.poster_path
