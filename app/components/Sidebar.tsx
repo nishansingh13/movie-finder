@@ -9,7 +9,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-[20%] h-lvh bg-black hidden sm:block text-white p-4 fixed ">
+    <div className="w-[20%] h-lvh bg-zinc-900 hidden sm:block text-white p-4 fixed ">
       <h2 className="text-xl font-bold mb-4">Sidebar</h2>
       <ul className="space-y-2 ">
         {data.map((item, index) => (
