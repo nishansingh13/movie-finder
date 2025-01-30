@@ -45,7 +45,7 @@ export default function Home({ initialTrending, initialHorror }: HomeProps) {
     try {
       setLoading(true);
       const res = await axios.get<{ results: Movie[] }>(
-        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&query=${query}`
+        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&query=${query}&include_adult=false`
       );
       setData(res.data.results);
     } catch (error) {
