@@ -16,7 +16,8 @@ export const metadata: Metadata = {
   title: "Find movies streaming",
   description: "Find out where is your favourite movies streaming which country and which platform",
   other: {
-    "google-site-verification": "Jc3O9XhPMKz8PUkRtR5MG7t4Z-H1P82mF4kJq1cUo0E", // Replace with your full verification code
+    "google-site-verification": "Jc3O9XhPMKz8PUkRtR5MG7t4Z-H1P82mF4kJq1cUo0E",
+    "google-adsense-account":"ca-pub-2845318690222180" // Replace with your full verification code
   }
 };
 
