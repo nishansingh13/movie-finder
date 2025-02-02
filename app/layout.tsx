@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Find movies streaming",
+  title: "Where To Watch",
   description: "Find out where your favorite movies are streaming, which country, and which platform.",
   other: {
     "google-site-verification": "Jc3O9XhPMKz8PUkRtR5MG7t4Z-H1P82mF4kJq1cUo0E",
