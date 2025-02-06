@@ -1,6 +1,6 @@
 // app/components/Home.tsx
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -13,6 +13,11 @@ interface Movie {
   overview: string;
   release_date: string;
   poster_path: string;
+}
+declare global {
+  interface Window {
+    adsbygoogle: any[];
+  }
 }
 
 interface Provider {
@@ -35,7 +40,13 @@ export default function Home({ initialTrending, initialHorror }: HomeProps) {
   const [inputValue, setInputValue] = useState("");
   const [loading, setLoading] = useState(false);
   const [regionLoading, setRegionLoading] = useState<number | null>(null);
+  useEffect(() => {
 
+    if (typeof window !== "undefined" )
+      {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  }, []);
   const handleSearch = async (query: string) => {
     if (!query.trim()) {
       setData([]);
@@ -124,6 +135,7 @@ export default function Home({ initialTrending, initialHorror }: HomeProps) {
   );
 
   return (
+    <>
     <div className="min-h-screen bg-black">
       <div className="p-4 fixed top-0 w-full bg-black/95 backdrop-blur z-50">
         <div className="max-w-2xl mx-auto relative">
@@ -165,6 +177,18 @@ export default function Home({ initialTrending, initialHorror }: HomeProps) {
           </div>
         )}
       </div>
+    
     </div>
+        
+         <div className="adsense-container">
+     <ins className="adsbygoogle"
+       style={{ display: "block" }}
+       data-ad-client="ca-pub-2845318690222180"
+       data-ad-slot="8766507804" 
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+       
+   </div>
+    </>
   );
 }
