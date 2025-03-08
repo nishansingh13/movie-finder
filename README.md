@@ -2,7 +2,6 @@
 
 A modern web application built with Next.js 13+ that helps users discover movies and find their streaming availability worldwide.
 
-![Movie Finder Preview](public/preview.png)
 
 ## 🚀 Features
 
