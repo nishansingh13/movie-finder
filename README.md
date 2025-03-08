@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Movie Finder - Global Streaming Availability Platform
 
-## Getting Started
+A modern web application built with Next.js 13+ that helps users discover movies and find their streaming availability worldwide.
 
-First, run the development server:
+![Movie Finder Preview](public/preview.png)
+
+## 🚀 Features
+
+- **Global Streaming Search**: Find where movies are available to stream across different countries
+- **Real-time Movie Search**: Dynamic search functionality with instant results
+- **Trending Movies**: Daily updated list of trending movies
+- **Genre Categories**: Browse movies by genres (including Horror showcase)
+- **Detailed Movie Pages**: 
+  - High-quality backdrop images
+  - Comprehensive movie information
+  - Streaming availability by country
+  - Animated transitions using GSAP
+- **Responsive Design**: Optimized for all device sizes
+- **Performance Optimized**: Server-side rendering and image optimization
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 13+, React 19
+- **Styling**: Tailwind CSS
+- **Animations**: GSAP
+- **API Integration**: TMDB API
+- **Type Safety**: TypeScript
+- **HTTP Client**: Axios
+- **Icons**: Lucide React
+
+## 📦 Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/nishansingh13/movie-finder
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+
+# Add your TMDB API key to .env.local
+NEXT_PUBLIC_API_KEY=your_tmdb_api_key
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔑 Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+NEXT_PUBLIC_API_KEY=your_tmdb_api_key
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+movie_finder/
+├── app/
+│   ├── api/
+│   │   └── movies/
+│   ├── movie/
+│   │   └── [id]/
+│   ├── pages/
+│   │   └── main.tsx
+│   ├── components/
+│   │   └── Sidebar.tsx
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── public/
+└── package.json
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🔄 API Routes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `GET /api/movies`: Fetches trending movies
+- `GET /movie/[id]`: Fetches detailed movie information
+- `GET /api/providers`: Fetches streaming availability
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Features in Detail
 
-## Deploy on Vercel
+### Home Page
+- Trending movies section
+- Horror movies showcase
+- Real-time search functionality
+- Responsive movie grid layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Movie Details Page
+- High-resolution backdrop images
+- Movie information display
+- Streaming availability by country
+- GSAP animations for smooth transitions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 License
+
+MIT License - feel free to use this project for your own purposes.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 👥 Developer
+
+- Developer Name: Nishan
+- Project Status: Active
